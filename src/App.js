@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+// COMPONENTS
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import { Route } from "react-router-dom"
+// PAGES
+import About from "./pages/About"
+import Home from "./pages/Home"
+import Projects from "./pages/Projects"
 import './App.css';
 
 function App() {
+// Heroku URL
+const URL = 'https://git.heroku.com/portfoloio-lab-v-1.git'
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Route exact path='/'>
+          <Home />
+      </Route>
+      <Route path='/projects'>
+          <Projects URL={URL} />
+      </Route>
+      <Route path='/about'>
+          <About URL={URL} />
+      </Route>
+      <Footer />
     </div>
   );
 }
