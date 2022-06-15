@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
 // Heroku URL
-const URL = 'https://git.heroku.com/portfoloio-lab-v-1.git'
+const URL = 'https://portfoloio-lab-v-1.herokuapp.com/'
 
   return (
     <div className="App">
